@@ -11,10 +11,10 @@ export default function Nav(props) {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/cooking">cooking</Link>
+                    <Link to="/cooking">Cooking</Link>
                 </li>
                 <li>
-                    <Link to="/running">running</Link>
+                    <Link to="/running">Running</Link>
                 </li>
             </ul>
         </nav>

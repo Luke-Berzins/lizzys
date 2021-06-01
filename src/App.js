@@ -3,9 +3,11 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import Nav from './Nav.js'
+import Nav from './components/Nav.js'
 import './App.css';
-
+import Running from './pages/Running'
+import Cooking from './pages/Cooking'
+import Home from './pages/Home'
 
 
 export default function App() {
