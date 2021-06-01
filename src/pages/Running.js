@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react' 
-import BlogPostLink from '../components/BlogPostLink'
 import { useHistory } from 'react-router-dom'
+import BlogPostLink from '../components/BlogPostLink'
+import BlogPost from '../components/BlogPost'
 
 
 const runningPosts = {
@@ -68,10 +69,9 @@ export default function Running(props) {
                 <ul>{runningList}</ul>
             }
             {show !== 0 &&
-                <article>
-                    <h1>{runningPosts[show].title}</h1>
-                    <p>{runningPosts[show].text}</p>
-                </article>
+                <BlogPost
+                    post={runningPosts[show]}
+                />
 
             }
         </div>

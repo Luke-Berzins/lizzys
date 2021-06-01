@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react' 
-import BlogPostLink from '../components/BlogPostLink'
 import { useHistory } from 'react-router-dom'
+import BlogPostLink from '../components/BlogPostLink'
+import BlogPost from '../components/BlogPost'
 
 
 const cookingPosts = {
@@ -68,10 +69,9 @@ export default function Cooking(props) {
                 <ul>{cookingList}</ul>
             }
             {show !== 0 &&
-                <article>
-                    <h1>{cookingPosts[show].title}</h1>
-                    <p>{cookingPosts[show].text}</p>
-                </article>
+                <BlogPost
+                post={cookingPosts[show]}
+                />
 
             }
         </div>
