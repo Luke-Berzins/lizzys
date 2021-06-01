@@ -1,4 +1,4 @@
-import React, { useState } from 'react' 
+import React, { useState, useEffect } from 'react' 
 import BlogPostLink from '../components/BlogPostLink'
 import { useHistory } from 'react-router-dom'
 
@@ -37,6 +37,10 @@ export default function Running(props) {
     const [show, setShow] = useState(0)
     let history = useHistory()
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [show])
+
     const runningList = Object.keys(runningPosts).map((post, key) => {
         return (<BlogPostLink
             key={key}
@@ -58,7 +62,8 @@ export default function Running(props) {
     
     return (
         <div>
-            <button onClick={() => handleBack(show)}>&#10615;</button>
+            <button type="button" onClick={() => handleBack(show)}>&#10615;</button>
+            <h1>Running</h1>
             {show === 0 &&
                 <ul>{runningList}</ul>
             }

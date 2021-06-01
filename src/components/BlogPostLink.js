@@ -1,11 +1,13 @@
 import React from 'react' 
+import './BlogPostLink.css'
 
 export default function BlogPostLink(props) {
     
     return (
 
-        <li>  
-            <h1 onClick={() => props.setShow(props.id)}>{props.title}</h1>
+        <li onClick={() => props.setShow(props.id)}> 
+            <img src="https://picsum.photos/seed/picsum/200/300" alt="dummy"></img>
+            <h3>{props.title}</h3>
         </li>
     )
 }

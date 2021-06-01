@@ -1,0 +1,22 @@
+ul {
+    margin-top: 20px;
+    list-style-type: none;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 180px);
+}
+
+li {
+    
+    
+}
+
+li:hover {
+    opacity: 0.6;
+}
+
+li img {
+    max-height: 200px;
+}
+
+
