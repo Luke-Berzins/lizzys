@@ -39,7 +39,9 @@ export default function Blog(props) {
             <button type="button" onClick={() => handleBack(show)}>&#10615;</button>
             <h1>{props.data.title}</h1>
             {show === 0 &&
-                <ul>{postList}</ul>
+                <section>
+                    <ul>{postList}</ul>
+                </section>
             }
             {show !== 0 &&
                 <BlogPost
