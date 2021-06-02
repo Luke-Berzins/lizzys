@@ -29,7 +29,7 @@ export default function Blog(props) {
     
     return (
         <div>
-            <button type="button" onClick={() => handleBack(props.show)}>&#10615;</button>
+            <button type="button" onClick={() => handleBack(props.show)}>&#10615; Back</button>
             {props.show === 0 &&
                 <section>
                     <h1>{props.data.title}</h1>

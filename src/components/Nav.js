@@ -1,10 +1,13 @@
 import React from 'react' 
 import { Link } from 'react-router-dom'
+import './Nav.css'
+
 export default function Nav(props) {
 
 
     return (
         <nav>
+            <h2>Lizzy</h2>
             <ul>
                 <li>
                     <Link 
