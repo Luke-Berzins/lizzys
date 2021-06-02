@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react' 
 import { useHistory } from 'react-router-dom'
 import BlogPostLink from '../components/BlogPostLink'
 import BlogPost from '../components/BlogPost'
@@ -6,28 +5,22 @@ import BlogPost from '../components/BlogPost'
 
 
 export default function Blog(props) {
-    const [show, setShow] = useState(0)
     let history = useHistory()
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [show])
-      
 
     const postList = Object.keys(props.data.posts).map((post, key) => {
         return (<BlogPostLink
             key={key}
             id={post}
             title={props.data.posts[post].title}
-            setShow={setShow}
+            setShow={props.setShow}
         />
         )
     })
 
 
-    const handleBack = (show) => {
-        if (show > 0) {
-            setShow(0)
+    const handleBack = (current) => {
+        if (props.show > 0) {
+            props.setShow(0)
         } else {
             history.push('/')
         }
@@ -36,16 +29,16 @@ export default function Blog(props) {
     
     return (
         <div>
-            <button type="button" onClick={() => handleBack(show)}>&#10615;</button>
-            {show === 0 &&
+            <button type="button" onClick={() => handleBack(props.show)}>&#10615;</button>
+            {props.show === 0 &&
                 <section>
                     <h1>{props.data.title}</h1>
                     <ul>{postList}</ul>
                 </section>
             }
-            {show !== 0 &&
+            {props.show !== 0 &&
                 <BlogPost
-                    post={props.data.posts[show]}
+                    post={props.data.posts[props.show]}
                 />
 
             }

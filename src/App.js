@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react' 
 import {
   BrowserRouter as Router,
   Route,
@@ -73,19 +74,32 @@ const runningPosts = {
 
 
 export default function App() {
+  const [show, setShow] = useState(0)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [show])
+  
+
   return (
     <div className="App">
       <Router>
-        <Nav />
+        <Nav 
+            setShow={setShow}
+        />
         <Switch>
           <Route path="/cooking">
             <Blog
-            data={cookingPosts} 
+            data={cookingPosts}
+            setShow={setShow}
+            show={show}
             />
           </Route>
           <Route path="/running">
           <Blog
-            data={runningPosts} 
+            data={runningPosts}
+            setShow={setShow}
+            show={show} 
             />
           </Route>
           <Route path="/">

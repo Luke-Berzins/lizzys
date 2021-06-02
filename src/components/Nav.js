@@ -7,13 +7,22 @@ export default function Nav(props) {
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link 
+                    to="/"
+                    onClick={() => props.setShow(0)}
+                    >Home</Link>
                 </li>
                 <li>
-                    <Link to="/cooking">Cooking</Link>
+                    <Link 
+                    to="/cooking"
+                    onClick={() => props.setShow(0)}
+                    >Cooking</Link>
                 </li>
                 <li>
-                    <Link to="/running">Running</Link>
+                    <Link 
+                    to="/running"
+                    onClick={() => props.setShow(0)}
+                    >Running</Link>
                 </li>
             </ul>
         </nav>
