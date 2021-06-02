@@ -5,8 +5,6 @@ import {
 } from 'react-router-dom'
 import Nav from './components/Nav.js'
 import './App.css';
-import Running from './pages/Running'
-import Cooking from './pages/Cooking'
 import Blog from './components/Blog'
 import Home from './pages/Home'
 
