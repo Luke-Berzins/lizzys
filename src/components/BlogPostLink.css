@@ -5,7 +5,7 @@ section ul {
     grid-template-columns: repeat(auto-fit, 180px);
     justify-content: center;
     padding: 10% 5px 10px;
-    margin: 80px;
+    margin: 10px 80px;
     border-bottom: 1px solid black;
 }
 
@@ -22,7 +22,6 @@ section ul li:hover {
 section ul li img {
     height: 175px;
     width: 175px;
-    
 }
 
 .date__circle {

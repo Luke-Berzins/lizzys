@@ -43,6 +43,7 @@ export default function Blog(props) {
             {props.show !== 0 &&
                 <BlogPost
                     post={props.data.posts[props.show]}
+                    handleBack={handleBack}
                 />
 
             }
