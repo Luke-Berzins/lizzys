@@ -2,4 +2,11 @@
   text-align: center;
 }
 
+h1 { 
+  font-family: 'Courgette', cursive;
+  font-size: 50px;
+}
 
+h3 {
+  font-family: 'Bad Script', cursive;
+}
