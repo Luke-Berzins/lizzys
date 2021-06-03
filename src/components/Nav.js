@@ -3,36 +3,36 @@ import { Link } from 'react-router-dom'
 import './Nav.css'
 
 export default function Nav(props) {
-    const [navState, setNavState] = useState("")
+    const [navState, setNavState] = useState(window.location.href.substring(14))
 
 
     return (
         <nav>
             <h2>Lizzy</h2>
             <ul>
-                {                    navState !== "Home" &&
+                {   navState !== "" &&
                 <li>
                     <Link 
                     to="/"
-                    onClick={() => setNavState("Home")}
+                    onClick={() => setNavState("")}
                     >Home</Link>
                 </li>
                 }
                 {
-                    navState !== "Cooking" &&
+                    navState !== "cooking" &&
                 <li>
                     <Link 
                     to="/cooking"
-                    onClick={() => setNavState("Cooking")}
+                    onClick={() => setNavState("cooking")}
                     >Cooking</Link>
                 </li>
                 }
                 {
-                    navState !== "Running" &&
+                    navState !== "running" &&
                 <li>
                     <Link 
                     to="/running"
-                    onClick={() => setNavState("Running")}
+                    onClick={() => setNavState("running")}
                     >Running</Link>
                 </li>
                 }

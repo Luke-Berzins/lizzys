@@ -1,6 +1,8 @@
 import { useHistory } from 'react-router-dom'
+import BlogHeader from './BlogHeader'
 import BlogPostLink from '../components/BlogPostLink'
 import BlogPost from '../components/BlogPost'
+
 
 
 
@@ -31,12 +33,12 @@ export default function Blog(props) {
     return (
         <div>
             {props.show === 0 &&
-                <section>
-                    <h1>{props.data.title}</h1>
-                    <button type="button" onClick={() => handleBack(props.show)}>
-                        &#10615; Back</button>
-                    <ul>{postList}</ul>
-                </section>
+                <BlogHeader 
+                    title={props.data.title}
+                    handleBack={handleBack}
+                    show={props.show}
+                    postList={postList}
+                />
             }
             {props.show !== 0 &&
                 <BlogPost
