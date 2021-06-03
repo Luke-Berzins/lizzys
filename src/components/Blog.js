@@ -12,6 +12,7 @@ export default function Blog(props) {
             key={key}
             id={post}
             title={props.data.posts[post].title}
+            date={props.data.posts[post].date}
             setShow={props.setShow}
         />
         )
@@ -29,10 +30,11 @@ export default function Blog(props) {
     
     return (
         <div>
-            <button type="button" onClick={() => handleBack(props.show)}>&#10615; Back</button>
             {props.show === 0 &&
                 <section>
                     <h1>{props.data.title}</h1>
+                    <button type="button" onClick={() => handleBack(props.show)}>
+                        &#10615; Back</button>
                     <ul>{postList}</ul>
                 </section>
             }

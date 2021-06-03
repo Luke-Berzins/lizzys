@@ -13,12 +13,10 @@ nav h2 {
 
 nav ul li a {
     text-decoration: none;
-    border-top: 0px;    
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0px 2px 2px 0px;
     display: flex;
 }
 
