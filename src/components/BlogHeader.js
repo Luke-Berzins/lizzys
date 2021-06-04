@@ -7,7 +7,7 @@ export default function BlogHeader(props) {
     return (
         <section>
             <header className="titleHeader">
-            <button type="button" onClick={() => props.handleBack(props.show)}>
+            <button type="button" >
                 &#10615; Back</button>
             <h1>{props.title}</h1>
             </header>

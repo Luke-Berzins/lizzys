@@ -5,7 +5,7 @@ export default function BlogPostLink(props) {
     
     
     return (
-        <li onClick={() => props.setShow(props.id)}> 
+        <li > 
             <img src="https://picsum.photos/seed/picsum/200/300" alt="dummy"></img>
             <div className="date__circle">
                 <span>{props.date.substring(0, 3)}</span>

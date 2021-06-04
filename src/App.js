@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react' 
+import React from 'react' 
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +11,7 @@ import Home from './pages/Home'
 
 const cookingPosts = {
   title: "Cooking",
+  route : "cooking",
   posts : { 
     1 : {
         id: 1,
@@ -45,6 +46,7 @@ const cookingPosts = {
 
 const runningPosts = {
   title: "Running",
+  route : "runnining",
   posts : {  
     1 : {
         id: 1,
@@ -82,35 +84,30 @@ const runningPosts = {
 
 
 export default function App() {
-  const [show, setShow] = useState(0)
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [show])
   
+
+ 
 
   return (
     <div className="App">
       <Router>
         <Nav 
-            setShow={setShow}
+            
         />
         <Switch>
           <Route path="/cooking">
             <Blog
+            key={0}
             data={cookingPosts}
-            setShow={setShow}
-            show={show}
             />
           </Route>
           <Route path="/running">
-          <Blog
-            data={runningPosts}
-            setShow={setShow}
-            show={show} 
-            />
+            <Blog
+              key={1}
+              data={runningPosts}
+              />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>

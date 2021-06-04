@@ -1,52 +1,83 @@
-import { useHistory } from 'react-router-dom'
+import { useHistory, 
+         Route, 
+         Link,
+         useRouteMatch,
+         useParams } from 'react-router-dom'
 import BlogHeader from './BlogHeader'
 import BlogPostLink from '../components/BlogPostLink'
 import BlogPost from '../components/BlogPost'
 
 
 
-
 export default function Blog(props) {
-    let history = useHistory()
+    const history = useHistory()
+    const { path, url } = useRouteMatch()
+    const { topicId } = useParams()
 
-    const postList = Object.keys(props.data.posts).map((post, key) => {
-        return (<BlogPostLink
-            key={key}
-            id={post}
-            title={props.data.posts[post].title}
-            date={props.data.posts[post].date}
-            setShow={props.setShow}
-        />
-        )
-    })
+    console.log(topicId)
+
+    console.log("path", path, "url,", url)
+
 
 
     const handleBack = (current) => {
-        if (props.show > 0) {
-            props.setShow(0)
+        if (props > 0) {
+            
         } else {
             history.push('/')
         }
     }
 
     
+    
+    const routeList = Object.keys(props.data.posts).map((post, key) => {
+        return (
+            <Route
+                key={post}
+                path={`${path}/${key}`}
+            >
+                <BlogPost
+                        key={key}
+                        post={props.data.posts[post]}
+                        parentRoute={props.data.route}
+                        handleBack={handleBack}
+                        />
+            </Route>
+        )
+    })
+    
+    const postList = Object.keys(props.data.posts).map((post, key) => {
+        return (
+            <Link
+                key={post}
+                to={`${url}/${key}`}
+            >
+                <BlogPostLink
+                    key={key}
+                    id={post}
+                    title={props.data.posts[post].title}
+                    date={props.data.posts[post].date}
+                    
+                />
+            </Link>
+        )
+    })
+
+
+    
     return (
         <div>
-            {props.show === 0 &&
+           
                 <BlogHeader 
                     title={props.data.title}
                     handleBack={handleBack}
-                    show={props.show}
                     postList={postList}
                 />
-            }
-            {props.show !== 0 &&
-                <BlogPost
-                    post={props.data.posts[props.show]}
-                    handleBack={handleBack}
-                />
-
-            }
+            
+            
+                {routeList}
+            
+            
         </div>
     )
 }
