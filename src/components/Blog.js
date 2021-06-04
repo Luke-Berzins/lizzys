@@ -1,8 +1,7 @@
-import { useHistory, 
-         Route, 
+import { Route, 
          Link,
          useRouteMatch,
-         useParams } from 'react-router-dom'
+        Switch } from 'react-router-dom'
 import BlogHeader from './BlogHeader'
 import BlogPostLink from '../components/BlogPostLink'
 import BlogPost from '../components/BlogPost'
@@ -10,47 +9,13 @@ import BlogPost from '../components/BlogPost'
 
 
 export default function Blog(props) {
-    const history = useHistory()
-    const { path, url } = useRouteMatch()
-    const { topicId } = useParams()
-
-    console.log(topicId)
-
-    console.log("path", path, "url,", url)
-
-
-
-    const handleBack = (current) => {
-        if (props > 0) {
-            
-        } else {
-            history.push('/')
-        }
-    }
-
-    
-    
-    const routeList = Object.keys(props.data.posts).map((post, key) => {
-        return (
-            <Route
-                key={post}
-                path={`${path}/${key}`}
-            >
-                <BlogPost
-                        key={key}
-                        post={props.data.posts[post]}
-                        parentRoute={props.data.route}
-                        handleBack={handleBack}
-                        />
-            </Route>
-        )
-    })
+    const { path, url } = useRouteMatch()     
     
     const postList = Object.keys(props.data.posts).map((post, key) => {
         return (
             <Link
-                key={post}
-                to={`${url}/${key}`}
+            key={post}
+            to={`${url}/${props.data.posts[post].title}`}
             >
                 <BlogPostLink
                     key={key}
@@ -58,26 +23,41 @@ export default function Blog(props) {
                     title={props.data.posts[post].title}
                     date={props.data.posts[post].date}
                     
-                />
+                    />
             </Link>
         )
     })
-
-
     
+    
+    const routeList = Object.keys(props.data.posts).map((post, key) => {
+        return (
+            <Route
+                key={post}
+                path={`${path}/${props.data.posts[post].title}`}
+                
+            >
+                <BlogPost
+                    key={key}
+                    post={props.data.posts[post]}
+                    parentRoute={props.data.route}
+                    />
+            </Route>
+        )
+    })
+
     return (
-        <div>
-           
-                <BlogHeader 
-                    title={props.data.title}
-                    handleBack={handleBack}
-                    postList={postList}
-                />
-            
-            
-                {routeList}
-            
-            
-        </div>
+        <section>
+                <Switch>
+                    {routeList}
+                <Route
+                    exact path={props.parentRoute}>
+                    <BlogHeader 
+                        title={props.data.title}
+                        postList={postList}
+                        />
+                </Route>
+                </Switch>
+                
+        </section>
     )
 }
