@@ -6,8 +6,6 @@ import BlogHeader from './BlogHeader'
 import BlogPostLink from '../components/BlogPostLink'
 import BlogPost from '../components/BlogPost'
 
-
-
 export default function Blog(props) {
     const { path, url } = useRouteMatch()     
     
@@ -28,36 +26,31 @@ export default function Blog(props) {
         )
     })
     
-    
     const routeList = Object.keys(props.data.posts).map((post, key) => {
         return (
             <Route
                 key={post}
                 path={`${path}/${props.data.posts[post].title}`}
-                
             >
                 <BlogPost
                     key={key}
                     post={props.data.posts[post]}
                     parentRoute={props.data.route}
-                    />
+                />
             </Route>
         )
     })
 
     return (
-        <section>
                 <Switch>
                     {routeList}
-                <Route
-                    exact path={props.parentRoute}>
-                    <BlogHeader 
-                        title={props.data.title}
-                        postList={postList}
+                    <Route
+                        exact path={props.parentRoute}>
+                        <BlogHeader 
+                            title={props.data.title}
+                            postList={postList}
                         />
-                </Route>
-                </Switch>
-                
-        </section>
+                    </Route>
+                </Switch>                
     )
 }

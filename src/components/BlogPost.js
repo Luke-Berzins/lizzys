@@ -1,9 +1,20 @@
 import React from 'react'
-import './BlogPost.css'
 import { useHistory } from 'react-router-dom'
+import BlogContent from './BlogContent'
+import './BlogPost.css'
 
 export default function BlogPost(props) {
     const history = useHistory()
+
+    let content = props.post.content.map((post, key) =>{
+
+        return (
+            <BlogContent
+                key={key}
+                content={post}
+            />
+        )
+    })
 
     return (
         <article>
@@ -12,7 +23,9 @@ export default function BlogPost(props) {
                 &#10615; Back</button>
                 <h1>{props.post.title}</h1>
             </header>
-            <p>{props.post.text}</p>
+            <div>
+                {content}
+            </div>
         </article>
     )
 }
