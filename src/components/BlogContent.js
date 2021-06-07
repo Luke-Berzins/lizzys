@@ -19,6 +19,12 @@ export default function BlogContent(props) {
                     type='right'
                 />  
             }
+            {props.content.type === "banner-image" && <Image
+                    text={props.content.text}
+                    image={props.content.image}
+                    type='banner'
+                />  
+            }
             {props.content.type === "text" && <Text 
                     text={props.content.text}
                 />
