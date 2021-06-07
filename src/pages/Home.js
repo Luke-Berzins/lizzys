@@ -13,7 +13,7 @@ export default function Home(props) {
                     Into Energy...
                     <br/>
                 </p>
-                <img src="https://picsum.photos/seed/picsum/200/300" alt="dummy"></img> 
+                <img src="./hero.jpg" alt="dummy"></img> 
             </div>
         </section>
     )
