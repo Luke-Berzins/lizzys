@@ -12,7 +12,7 @@ export default function List(props) {
             <ul>
                 {props.items.map((content, key) => {
                     return (
-                        <li>{content}</li>
+                        <li>&#x2767; {content}</li>
                     )
                 })}
             </ul>          

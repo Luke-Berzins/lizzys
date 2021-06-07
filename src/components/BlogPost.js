@@ -23,7 +23,7 @@ export default function BlogPost(props) {
                 &#10615; Back</button>
                 <h1>{props.post.title}</h1>
             </header>
-            <div>
+            <div className="blog__content--all">
                 {content}
             </div>
         </article>

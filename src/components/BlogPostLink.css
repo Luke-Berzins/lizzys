@@ -20,8 +20,9 @@ section ul li:hover {
 }
 
 section ul li img {
+    object-fit: cover;
+    width: 100%;
     height: 175px;
-    width: 175px;
 }
 
 .date__circle {

@@ -5,21 +5,41 @@ export default function Image(props) {
 
 
     return (
-        <div className='content__image'>
-
+        <div>
             {props.type === 'left' && 
-            <div>
+            <div className='content__image'>
+                <figure>
                     <img src={props.image} alt='article'></img>
-                    <p>{props.text}</p>
+                    <figcaption>
+                        {props.caption}
+                    </figcaption>
+                </figure>
+                <p>{props.text}</p>
             </div>        
             }
 
             {props.type === 'right' && 
-            <div>
-                    <p>{props.text}</p>
+            <div className='content__image'>
+                <figure>    
                     <img src={props.image} alt='article'></img>
+                    <figcaption>
+                    {props.caption}
+                    </figcaption>
+                </figure>
+                <p>{props.text}</p>
             </div>  
-            }  
+            }
+            {props.type === 'banner' && 
+            <div className='content__image'>
+                <figure className='banner'>    
+                    <img src={props.image} alt='article'></img>
+                    <figcaption>
+                    {props.caption}
+                    </figcaption>
+                </figure>
+                <p>{props.text}</p>
+            </div>  
+            }    
         </div>
     )
 }
