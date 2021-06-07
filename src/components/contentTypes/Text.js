@@ -4,6 +4,6 @@ export default function Text(props) {
 
 
     return (
-        <p>{props.text}</p>
+        <p className='content__text'>{props.text}</p>
     )
 }

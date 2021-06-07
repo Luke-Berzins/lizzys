@@ -4,31 +4,29 @@ import Image from './contentTypes/Image'
 import Text from './contentTypes/Text'
 
 export default function BlogContent(props) {
-
-    const list = props.content.text.split(", ").forEach((listItem => {
-        listItem = `<li>${listItem}</li>`
-    }))
-    console.log(list)
-    
+   
     return (
         <div>
-            {props.content.type === "left-image" &&
-                <Image
-                    content={props.content}
-                />
-                
+            {props.content.type === "left-image" && <Image
+                    text={props.content.text}
+                    image={props.content.image}
+                    type='left'
+                />  
             }
-    
-            {props.content.type === "text" &&
-                <Text 
-                    content={props.content}
+            {props.content.type === "right-image" && <Image
+                    text={props.content.text}
+                    image={props.content.image}
+                    type='right'
+                />  
+            }
+            {props.content.type === "text" && <Text 
+                    text={props.content.text}
                 />
             }
 
-            {props.content.type === "list" &&
-
-                <List 
-                    content={props.content}
+            {props.content.type === "list" && <List
+                    title={props.content.title} 
+                    items={props.content.items}
                 />
             }
         </div>

@@ -20,6 +20,7 @@ export default function Blog(props) {
                     id={post}
                     title={props.data.posts[post].title}
                     date={props.data.posts[post].date}
+                    mainImage={props.data.posts[post].mainImage}
                     
                     />
             </Link>

@@ -6,7 +6,7 @@ export default function BlogPostLink(props) {
     
     return (
         <li > 
-            <img src="https://picsum.photos/seed/picsum/200/300" alt="dummy"></img>
+            <img src={props.mainImage} alt="link"></img>
             <div className="date__circle">
                 <span>{props.date.substring(0, 3)}</span>
                 <span>{props.date.substring(props.date.length - 7, props.date.length - 4)}</span>
