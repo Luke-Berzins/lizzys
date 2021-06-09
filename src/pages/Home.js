@@ -18,7 +18,7 @@ export default function Home(props) {
 
     return (
         <section className="home__container">
-            <h1>Good Health & Food</h1>
+            <h1>Welcome to my running and cooking blog</h1>
             <div className="hero__lottie" ref={lottieShoePot}></div>
             <div className="hero">
                 <p className="hero__text">
