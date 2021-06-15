@@ -18,14 +18,14 @@ const cookingPosts = {
         title : "Millionaire Shortbread",
         date: "December 14 2021",
         categories: ["desert"],
-        mainImage : "./recipe_photos/Millionaires-shortbread.jpeg",
+        mainImage : "/recipe_photos/Millionaires-shortbread.jpeg",
         options: {
 
         },
         content: [
           { 
             type : "banner-image",
-            image : "https://picsum.photos/seed/picsum/200/300",
+            image : "/recipe_photos/Millionaires-shortbread.jpeg",
           },
           { 
             type : "list",
@@ -65,7 +65,7 @@ const cookingPosts = {
         title : "Peanut Sauce Stir-Fry",
         date: "June 02 2021",
         categories: ["dinner"],
-        mainImage : "./recipe_photos/peanut-sauce-stir-fry.jpeg",
+        mainImage : "/recipe_photos/peanut-sauce-stir-fry.jpeg",
         options: {
                   
         },
@@ -87,7 +87,7 @@ const cookingPosts = {
         title : "Power Salad",
         date: "Auguest 25 2021",
         categories: ["dinner"],
-        mainImage : "./recipe_photos/power-salad.jpeg",
+        mainImage : "/recipe_photos/power-salad.jpeg",
         options: {
                   
         },
@@ -114,7 +114,7 @@ const cookingPosts = {
         title : "Buffalo Cauliflower",
         date: "April 04 2021",
         categories: ["dinner"],
-        mainImage : "./recipe_photos/butter-cauliflower.jpeg",
+        mainImage : "/recipe_photos/butter-cauliflower.jpeg",
         options: {
                   
         },
@@ -143,7 +143,7 @@ const runningPosts = {
         id: 1,
         title : "Moab 240",
         date: "October 12 2018",
-        mainImage : "./running_photos/moab_240.jpeg",
+        mainImage : "/running_photos/moab_240.jpeg",
         options: {
           
         },
@@ -164,7 +164,7 @@ const runningPosts = {
         id : 2,
         title : "Tahoe 200",
         date: "September 13 2019",
-        mainImage : "https://picsum.photos/seed/picsum/200/300",
+        mainImage : "/running_photos/tahoe.jpg",
         options: {           
         },
         content: [
@@ -184,7 +184,7 @@ const runningPosts = {
         id : 3,
         title : "Bigfoot 200",
         date: "August 11 2017",
-        mainImage : "./running_photos/bigfoot.jpeg",
+        mainImage : "/running_photos/bigfoot.jpeg",
         options: {
                   
         },
@@ -205,7 +205,7 @@ const runningPosts = {
         title : "Haliburton 100",
         date: "September 12 2015",
         id : 4,
-        mainImage : "https://picsum.photos/seed/picsum/200/300",
+        mainImage : "/running_photos/haliburton_main.jpeg",
         options: {
                   
         },
